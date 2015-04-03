@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B3E57601ACE5EBF00BF9ACB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B3E575F1ACE5EBF00BF9ACB /* AddressBook.framework */; };
 		9B6636F41ACD9D56000535A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6636F31ACD9D56000535A9 /* AppDelegate.swift */; };
 		9B6636F61ACD9D56000535A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6636F51ACD9D56000535A9 /* ViewController.swift */; };
 		9B6636F91ACD9D56000535A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6636F71ACD9D56000535A9 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B3E575F1ACE5EBF00BF9ACB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		9B6636EE1ACD9D56000535A9 /* Enhanced Contact Entry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Enhanced Contact Entry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6636F21ACD9D56000535A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6636F31ACD9D56000535A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3E57601ACE5EBF00BF9ACB /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		9B6636E51ACD9D56000535A9 = {
 			isa = PBXGroup;
 			children = (
+				9B3E575F1ACE5EBF00BF9ACB /* AddressBook.framework */,
 				9B6636F01ACD9D56000535A9 /* Enhanced Contact Entry */,
 				9B6637061ACD9D57000535A9 /* Enhanced Contact EntryTests */,
 				9B6636EF1ACD9D56000535A9 /* Products */,
@@ -405,6 +409,7 @@
 				9B66370F1ACD9D57000535A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9B6637101ACD9D57000535A9 /* Build configuration list for PBXNativeTarget "Enhanced Contact EntryTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				9B6637121ACD9D57000535A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

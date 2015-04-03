@@ -1,25 +1,150 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="II7-qa-5wX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="jNf-B6-Qup">
+            <objects>
+                <navigationController id="II7-qa-5wX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k6N-0T-5RS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="ihT-Le-kl2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EL9-ko-KUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278" y="387"/>
+        </scene>
+        <!--New Contact-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Enhanced_Contact_Entry" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FL8-Ct-4eU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fpv-hd-32v">
+                                        <rect key="frame" x="8" y="8" width="584" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="pKF-9b-vWq"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YCC-1D-r2c">
+                                        <rect key="frame" x="8" y="46" width="584" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="59e-Oi-fBA"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEh-W9-EvM">
+                                        <rect key="frame" x="8" y="84" width="584" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="mKr-E2-1pP"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vah-DL-wt1">
+                                        <rect key="frame" x="8" y="122" width="584" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="wFw-tS-OMu"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCk-aT-wtR">
+                                        <rect key="frame" x="8" y="162" width="46" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Notes go here" translatesAutoresizingMaskIntoConstraints="NO" id="b2u-FB-26a">
+                                        <rect key="frame" x="8" y="191" width="584" height="337"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="337" id="PVY-4E-VGi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="PVY-4E-VGi"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="bHR-y8-MNt"/>
+                                        </connections>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mEh-W9-EvM" firstAttribute="top" secondItem="YCC-1D-r2c" secondAttribute="bottom" constant="8" symbolic="YES" id="0qx-3t-78i"/>
+                                    <constraint firstItem="fpv-hd-32v" firstAttribute="leading" secondItem="FL8-Ct-4eU" secondAttribute="leadingMargin" id="33G-uL-LWx"/>
+                                    <constraint firstItem="b2u-FB-26a" firstAttribute="top" secondItem="cCk-aT-wtR" secondAttribute="bottom" constant="8" symbolic="YES" id="7vc-IV-Rxa"/>
+                                    <constraint firstItem="b2u-FB-26a" firstAttribute="leading" secondItem="vah-DL-wt1" secondAttribute="leading" id="8CS-ay-jgh"/>
+                                    <constraint firstItem="YCC-1D-r2c" firstAttribute="leading" secondItem="fpv-hd-32v" secondAttribute="leading" id="Ett-Sd-8VH"/>
+                                    <constraint firstItem="YCC-1D-r2c" firstAttribute="top" secondItem="fpv-hd-32v" secondAttribute="bottom" constant="8" symbolic="YES" id="FcW-rK-Tgf"/>
+                                    <constraint firstAttribute="bottom" secondItem="fpv-hd-32v" secondAttribute="bottom" constant="498" id="FoU-fJ-Rao"/>
+                                    <constraint firstItem="vah-DL-wt1" firstAttribute="top" secondItem="mEh-W9-EvM" secondAttribute="bottom" constant="8" symbolic="YES" id="GNr-X6-Rpg"/>
+                                    <constraint firstItem="fpv-hd-32v" firstAttribute="top" secondItem="FL8-Ct-4eU" secondAttribute="topMargin" id="OKJ-or-Vos"/>
+                                    <constraint firstItem="vah-DL-wt1" firstAttribute="leading" secondItem="mEh-W9-EvM" secondAttribute="leading" id="Qgz-Iq-XYz"/>
+                                    <constraint firstItem="mEh-W9-EvM" firstAttribute="leading" secondItem="YCC-1D-r2c" secondAttribute="leading" id="YL1-Iu-9t0"/>
+                                    <constraint firstItem="cCk-aT-wtR" firstAttribute="top" secondItem="vah-DL-wt1" secondAttribute="bottom" constant="10" id="bwI-FY-qPG"/>
+                                    <constraint firstItem="b2u-FB-26a" firstAttribute="leading" secondItem="cCk-aT-wtR" secondAttribute="leading" id="clz-Ff-sdm"/>
+                                    <constraint firstAttribute="bottom" secondItem="YCC-1D-r2c" secondAttribute="bottom" constant="460" id="fIF-Gb-PwU"/>
+                                    <constraint firstItem="mEh-W9-EvM" firstAttribute="trailing" secondItem="YCC-1D-r2c" secondAttribute="trailing" id="gTa-qg-l5A"/>
+                                    <constraint firstItem="fpv-hd-32v" firstAttribute="trailing" secondItem="FL8-Ct-4eU" secondAttribute="trailingMargin" id="kR7-H7-7SA"/>
+                                    <constraint firstItem="YCC-1D-r2c" firstAttribute="trailing" secondItem="fpv-hd-32v" secondAttribute="trailing" id="mjC-Ef-Qs6"/>
+                                    <constraint firstItem="fpv-hd-32v" firstAttribute="centerX" secondItem="FL8-Ct-4eU" secondAttribute="centerX" id="nZY-c8-aUT"/>
+                                    <constraint firstItem="mEh-W9-EvM" firstAttribute="trailing" secondItem="vah-DL-wt1" secondAttribute="trailing" id="s3P-Pz-WdK"/>
+                                    <constraint firstItem="b2u-FB-26a" firstAttribute="bottom" secondItem="FL8-Ct-4eU" secondAttribute="bottomMargin" id="sxe-VM-O6Z"/>
+                                    <constraint firstItem="b2u-FB-26a" firstAttribute="trailing" secondItem="vah-DL-wt1" secondAttribute="trailing" id="twr-a7-8ue"/>
+                                    <constraint firstItem="fpv-hd-32v" firstAttribute="top" secondItem="FL8-Ct-4eU" secondAttribute="top" constant="8" id="yG5-Bx-lzC"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FL8-Ct-4eU" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="CWm-nb-Xv2"/>
+                            <constraint firstItem="FL8-Ct-4eU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="SOA-xY-WTW"/>
+                            <constraint firstItem="FL8-Ct-4eU" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="WI9-FL-1MJ"/>
+                            <constraint firstAttribute="trailing" secondItem="FL8-Ct-4eU" secondAttribute="trailing" id="tlU-uq-40Q"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="New Contact" id="Y5S-Mr-y1N">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="ado-Ft-S7T">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="vXZ-lx-hvc" id="5bX-bj-VrB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="emailAddressTextField" destination="vah-DL-wt1" id="J1a-Yp-zNL"/>
+                        <outlet property="firstNameTextField" destination="fpv-hd-32v" id="pt9-bO-id1"/>
+                        <outlet property="lastNameTextField" destination="YCC-1D-r2c" id="a0c-CM-fPk"/>
+                        <outlet property="notesTextView" destination="b2u-FB-26a" id="ObP-eR-zLy"/>
+                        <outlet property="phoneNumberTextField" destination="mEh-W9-EvM" id="YWn-Ck-ugO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="406" y="387"/>
         </scene>
     </scenes>
 </document>
