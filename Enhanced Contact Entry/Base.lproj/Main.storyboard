@@ -39,23 +39,15 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fpv-hd-32v">
                                         <rect key="frame" x="8" y="8" width="584" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                         <connections>
                                             <outlet property="delegate" destination="vXZ-lx-hvc" id="pKF-9b-vWq"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YCC-1D-r2c">
-                                        <rect key="frame" x="8" y="46" width="584" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="59e-Oi-fBA"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEh-W9-EvM">
                                         <rect key="frame" x="8" y="84" width="584" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                         <connections>
                                             <outlet property="delegate" destination="vXZ-lx-hvc" id="mKr-E2-1pP"/>
                                         </connections>
@@ -63,25 +55,27 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vah-DL-wt1">
                                         <rect key="frame" x="8" y="122" width="584" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                         <connections>
                                             <outlet property="delegate" destination="vXZ-lx-hvc" id="wFw-tS-OMu"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCk-aT-wtR">
-                                        <rect key="frame" x="8" y="162" width="46" height="21"/>
+                                        <rect key="frame" x="8" y="160" width="46" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Notes go here" translatesAutoresizingMaskIntoConstraints="NO" id="b2u-FB-26a">
-                                        <rect key="frame" x="8" y="191" width="584" height="337"/>
+                                        <rect key="frame" x="8" y="189" width="584" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="337" id="PVY-4E-VGi"/>
+                                            <constraint firstAttribute="height" constant="34" id="YMQ-qG-TZv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="done"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="PVY-4E-VGi"/>
@@ -91,30 +85,145 @@
                                             <outlet property="delegate" destination="vXZ-lx-hvc" id="bHR-y8-MNt"/>
                                         </connections>
                                     </textView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWh-lb-onu">
+                                        <rect key="frame" x="8" y="231" width="584" height="30"/>
+                                        <state key="normal" title="Send SMS">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendSMSButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="owr-RU-Ivt"/>
+                                        </connections>
+                                    </button>
+                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="132" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JZJ-xL-g5l">
+                                        <rect key="frame" x="8" y="269" width="584" height="130"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="3ge-xt-L3s"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="4Z3-V4-Huj"/>
+                                            <constraint firstAttribute="height" constant="44" id="8Mb-kO-RFL"/>
+                                            <constraint firstAttribute="height" constant="130" id="cjV-hp-mNs"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell0" textLabel="2eb-Tp-rCj" detailTextLabel="Rif-K4-o7h" imageView="OhE-fE-tOp" rowHeight="44" style="IBUITableViewCellStyleSubtitle" id="AWU-7c-zHT">
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AWU-7c-zHT" id="Uhf-5d-Yft">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Daniel Moreh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2eb-Tp-rCj">
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="12 Mutual Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rif-K4-o7h">
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="facebook_add" id="OhE-fE-tOp">
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell1" textLabel="GEa-76-Kqf" detailTextLabel="c9s-io-z53" imageView="YUW-sD-pHE" rowHeight="44" style="IBUITableViewCellStyleSubtitle" id="thM-2t-JQr">
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="thM-2t-JQr" id="k7S-wi-gyR">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="@the_real_daniel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GEa-76-Kqf">
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Student @Northeastern!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c9s-io-z53">
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="twitter_add" id="YUW-sD-pHE">
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell2" textLabel="Ogd-oA-Vb1" detailTextLabel="a0p-0Q-LpZ" imageView="eHN-PX-iEB" rowHeight="44" style="IBUITableViewCellStyleSubtitle" id="Zlc-3C-CT2">
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zlc-3C-CT2" id="iat-dV-Atp">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Daniel Moreh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ogd-oA-Vb1">
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Software Engineering Co-op at HubSpot" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a0p-0Q-LpZ">
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="linkedin_add" id="eHN-PX-iEB">
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="3ge-xt-L3s"/>
+                                                <exclude reference="4Z3-V4-Huj"/>
+                                                <exclude reference="8Mb-kO-RFL"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="dataSource" destination="vXZ-lx-hvc" id="KCk-vf-l9K"/>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="yTy-Q8-LJu"/>
+                                        </connections>
+                                    </tableView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YCC-1D-r2c">
+                                        <rect key="frame" x="8" y="46" width="584" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="59e-Oi-fBA"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="mEh-W9-EvM" firstAttribute="top" secondItem="YCC-1D-r2c" secondAttribute="bottom" constant="8" symbolic="YES" id="0qx-3t-78i"/>
                                     <constraint firstItem="fpv-hd-32v" firstAttribute="leading" secondItem="FL8-Ct-4eU" secondAttribute="leadingMargin" id="33G-uL-LWx"/>
-                                    <constraint firstItem="b2u-FB-26a" firstAttribute="top" secondItem="cCk-aT-wtR" secondAttribute="bottom" constant="8" symbolic="YES" id="7vc-IV-Rxa"/>
-                                    <constraint firstItem="b2u-FB-26a" firstAttribute="leading" secondItem="vah-DL-wt1" secondAttribute="leading" id="8CS-ay-jgh"/>
+                                    <constraint firstItem="b2u-FB-26a" firstAttribute="trailing" secondItem="vah-DL-wt1" secondAttribute="trailing" id="5D3-PB-bXD"/>
+                                    <constraint firstItem="cCk-aT-wtR" firstAttribute="top" secondItem="vah-DL-wt1" secondAttribute="bottom" constant="8" symbolic="YES" id="Chz-2i-MCs"/>
+                                    <constraint firstItem="JZJ-xL-g5l" firstAttribute="trailing" secondItem="b2u-FB-26a" secondAttribute="trailing" id="DLZ-2b-uO9"/>
                                     <constraint firstItem="YCC-1D-r2c" firstAttribute="leading" secondItem="fpv-hd-32v" secondAttribute="leading" id="Ett-Sd-8VH"/>
                                     <constraint firstItem="YCC-1D-r2c" firstAttribute="top" secondItem="fpv-hd-32v" secondAttribute="bottom" constant="8" symbolic="YES" id="FcW-rK-Tgf"/>
                                     <constraint firstAttribute="bottom" secondItem="fpv-hd-32v" secondAttribute="bottom" constant="498" id="FoU-fJ-Rao"/>
                                     <constraint firstItem="vah-DL-wt1" firstAttribute="top" secondItem="mEh-W9-EvM" secondAttribute="bottom" constant="8" symbolic="YES" id="GNr-X6-Rpg"/>
+                                    <constraint firstItem="b2u-FB-26a" firstAttribute="top" secondItem="cCk-aT-wtR" secondAttribute="bottom" constant="8" symbolic="YES" id="NQf-lD-iae"/>
                                     <constraint firstItem="fpv-hd-32v" firstAttribute="top" secondItem="FL8-Ct-4eU" secondAttribute="topMargin" id="OKJ-or-Vos"/>
                                     <constraint firstItem="vah-DL-wt1" firstAttribute="leading" secondItem="mEh-W9-EvM" secondAttribute="leading" id="Qgz-Iq-XYz"/>
                                     <constraint firstItem="mEh-W9-EvM" firstAttribute="leading" secondItem="YCC-1D-r2c" secondAttribute="leading" id="YL1-Iu-9t0"/>
-                                    <constraint firstItem="cCk-aT-wtR" firstAttribute="top" secondItem="vah-DL-wt1" secondAttribute="bottom" constant="10" id="bwI-FY-qPG"/>
-                                    <constraint firstItem="b2u-FB-26a" firstAttribute="leading" secondItem="cCk-aT-wtR" secondAttribute="leading" id="clz-Ff-sdm"/>
+                                    <constraint firstItem="JWh-lb-onu" firstAttribute="leading" secondItem="b2u-FB-26a" secondAttribute="leading" id="b6u-G4-asH"/>
+                                    <constraint firstItem="JWh-lb-onu" firstAttribute="top" secondItem="b2u-FB-26a" secondAttribute="bottom" constant="8" symbolic="YES" id="bqR-4L-rW9"/>
+                                    <constraint firstItem="JZJ-xL-g5l" firstAttribute="top" secondItem="JWh-lb-onu" secondAttribute="bottom" constant="8" symbolic="YES" id="cV9-Vh-k9q"/>
                                     <constraint firstAttribute="bottom" secondItem="YCC-1D-r2c" secondAttribute="bottom" constant="460" id="fIF-Gb-PwU"/>
                                     <constraint firstItem="mEh-W9-EvM" firstAttribute="trailing" secondItem="YCC-1D-r2c" secondAttribute="trailing" id="gTa-qg-l5A"/>
                                     <constraint firstItem="fpv-hd-32v" firstAttribute="trailing" secondItem="FL8-Ct-4eU" secondAttribute="trailingMargin" id="kR7-H7-7SA"/>
+                                    <constraint firstItem="cCk-aT-wtR" firstAttribute="leading" secondItem="vah-DL-wt1" secondAttribute="leading" id="mZc-pS-md8"/>
                                     <constraint firstItem="YCC-1D-r2c" firstAttribute="trailing" secondItem="fpv-hd-32v" secondAttribute="trailing" id="mjC-Ef-Qs6"/>
+                                    <constraint firstItem="b2u-FB-26a" firstAttribute="leading" secondItem="cCk-aT-wtR" secondAttribute="leading" id="mnN-ie-Reh"/>
                                     <constraint firstItem="fpv-hd-32v" firstAttribute="centerX" secondItem="FL8-Ct-4eU" secondAttribute="centerX" id="nZY-c8-aUT"/>
+                                    <constraint firstItem="JWh-lb-onu" firstAttribute="trailing" secondItem="b2u-FB-26a" secondAttribute="trailing" id="o4D-Iv-dbL"/>
                                     <constraint firstItem="mEh-W9-EvM" firstAttribute="trailing" secondItem="vah-DL-wt1" secondAttribute="trailing" id="s3P-Pz-WdK"/>
-                                    <constraint firstItem="b2u-FB-26a" firstAttribute="bottom" secondItem="FL8-Ct-4eU" secondAttribute="bottomMargin" id="sxe-VM-O6Z"/>
-                                    <constraint firstItem="b2u-FB-26a" firstAttribute="trailing" secondItem="vah-DL-wt1" secondAttribute="trailing" id="twr-a7-8ue"/>
                                     <constraint firstItem="fpv-hd-32v" firstAttribute="top" secondItem="FL8-Ct-4eU" secondAttribute="top" constant="8" id="yG5-Bx-lzC"/>
+                                    <constraint firstItem="JWh-lb-onu" firstAttribute="leading" secondItem="JZJ-xL-g5l" secondAttribute="leading" id="z2Z-Da-pY2"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -140,6 +249,8 @@
                         <outlet property="lastNameTextField" destination="YCC-1D-r2c" id="a0c-CM-fPk"/>
                         <outlet property="notesTextView" destination="b2u-FB-26a" id="ObP-eR-zLy"/>
                         <outlet property="phoneNumberTextField" destination="mEh-W9-EvM" id="YWn-Ck-ugO"/>
+                        <outlet property="sendSMSButton" destination="JWh-lb-onu" id="Vcm-ZD-UfI"/>
+                        <outlet property="tableView" destination="JZJ-xL-g5l" id="7Lk-zi-lHd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -147,4 +258,9 @@
             <point key="canvasLocation" x="406" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="facebook_add" width="256" height="256"/>
+        <image name="linkedin_add" width="256" height="256"/>
+        <image name="twitter_add" width="256" height="256"/>
+    </resources>
 </document>
